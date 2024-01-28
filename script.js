@@ -1,5 +1,20 @@
-const $ = document.querySelector.bind(document);
-const output = "Hello World";
+info = {
+    name: 'Osee Junior',
+    social:{
+    twitter: '@planetoftheweb',
+    youtube: 'youtube.com/planetoftheweb',
+    linkedin: 'linkedin.com/planetoftheweb'
+    },
+   
+  }
+function listObject(data){
+  const $ = document.querySelector.bind(document)
+  let output = '<ul>'
+  for (const key in data){
+    output += `<li><a href="${data[key]}">${key}</a>`
+  }
+  output +='</ul>'
+  $('#output').innerHTML = output
+}
 
-$("#output").innerHTML = output;
-console.log(output);
+listObject(info.social)
